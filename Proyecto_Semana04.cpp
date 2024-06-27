@@ -141,6 +141,8 @@ template <typename T>
 class Departamento {
 private:
     vector<T*> empleados; // Usamos vector en lugar de puntero a arreglo
+// El vector encargado de almacenar punteros a objetos de tipo T 
+// (donde T puede ser cualquier tipo que herede de Empleado, como Gerente, Desarrollador, o Disenador)
 public:
     // Constructor por defecto
     Departamento() {}
@@ -164,12 +166,15 @@ public:
     T* buscarEmpleado(const string& nombre) const {
         //uso de algoritmo de busqueda find_if
         auto it = find_if(empleados.begin(), empleados.end(), [&nombre](T* emp) {
+        // find_if busca empleado por nombre en vector usando lambda comparativa.
             return emp->getNombre() == nombre;
         });
         if (it != empleados.end()) {
             return *it;
         }
         return nullptr;
+        // Nullptr indica que un puntero no apunta a ninguna dirección de memoria válida
+        // Si no encuentra, devuelve nullptr
     }
 
     // Método para listar todos los empleados
@@ -216,6 +221,7 @@ int main() {
         cout << "Ingrese tarifa en soles de hora: ";
         cin >> Thora;
         if (cin.fail()) {
+        // cin.fail() Detecta errores de tipo al leer datos con cin
             throw runtime_error("Error: entrada no válida para tarifa por hora.");
         }
         cin.ignore();  // Limpiar el buffer de entrada
@@ -232,23 +238,28 @@ int main() {
             menu();
             cin >> opcion;
             cin.ignore(); // Limpiar el buffer de entrada
+            // cin.ignore() Descarta caracteres adicionales en el buffer de entrada de cin
             switch (opcion) {
                 case 1: {
                     cout << "Tipo de Empleado (1. Gerente, 2. Desarrollador, 3. Disenador): ";
                     int tipo;
                     cin >> tipo;
                     cin.ignore();
+                    // cin.ignore() Descarta caracteres adicionales en el buffer de entrada de cin
 
                     string nombre, fecha;
                     double salario;
 
                     cout << "Nombre: ";
                     getline(cin, nombre);
+                    // getline() Lee una línea completa de texto desde cin, incluyendo espacios en blanco
                     cout << "Salario Base: ";
                     cin >> salario;
                     cin.ignore();
+                    // cin.ignore() Descarta caracteres adicionales en el buffer de entrada de cin
                     cout << "Fecha de Contratacion (YYYY-MM-DD): ";
                     getline(cin, fecha);
+                    // getline() Lee una línea completa de texto desde cin, incluyendo espacios en blanco
 
                     if (tipo == 1) {
                         double bono;
@@ -296,9 +307,11 @@ int main() {
                     int depto;
                     cin >> depto;
                     cin.ignore();
+                    // cin.ignore() Descarta caracteres adicionales en el buffer de entrada de cin
                     string nombre;
                     cout << "Nombre del empleado a buscar: ";
                     getline(cin, nombre);
+                    // getline() Lee una línea completa de texto desde cin, incluyendo espacios en blanco
 
                     if (depto == 1) {
                         Gerente* g = deptoGerentes.buscarEmpleado(nombre);
