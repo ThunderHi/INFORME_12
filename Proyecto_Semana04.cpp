@@ -166,7 +166,9 @@ public:
     T* buscarEmpleado(const string& nombre) const {
         //uso de algoritmo de busqueda find_if
         auto it = find_if(empleados.begin(), empleados.end(), [&nombre](T* emp) {
-        // find_if busca empleado por nombre en vector usando lambda comparativa.
+        // auto deduce automáticamente el tipo de variable según la inicialización proporcionada
+        // Ya sea int, double, char 
+        // find_if busca empleado por nombre en vector usando lambda comparativa
             return emp->getNombre() == nombre;
         });
         if (it != empleados.end()) {
@@ -193,6 +195,7 @@ public:
     void guardar(ofstream& out) const {
         out << empleados.size() << endl;  // Guardar el número de empleados
         for (const auto& emp : empleados) {
+        // auto deduce tipo de elemento en empleados, iterando y llamando guardar(out) a cada uno
             emp->guardar(out);
         }
     }
