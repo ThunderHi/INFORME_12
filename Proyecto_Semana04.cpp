@@ -162,13 +162,16 @@ public:
         }
     }
 
+    // La lambda dentro de buscarEmpleado define cómo find_if busca un empleado por nombre
+    // Lambda sirve para definir funciones anónimas localmente, útiles en algoritmos y operaciones funcionales
+    // Las lambdas se usan donde se necesitan funciones, como en algoritmos de la STL como find_if.
     // Método para buscar un empleado por nombre
     T* buscarEmpleado(const string& nombre) const {
         //uso de algoritmo de busqueda find_if
         auto it = find_if(empleados.begin(), empleados.end(), [&nombre](T* emp) {
         // auto deduce automáticamente el tipo de variable según la inicialización proporcionada
         // Ya sea int, double, char 
-        // find_if busca empleado por nombre en vector usando lambda comparativa
+        // find_if busca empleado por nombre en vector usando lambda
             return emp->getNombre() == nombre;
         });
         if (it != empleados.end()) {
