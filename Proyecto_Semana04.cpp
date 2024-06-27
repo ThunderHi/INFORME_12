@@ -164,7 +164,7 @@ public:
 
     // La lambda dentro de buscarEmpleado define cómo find_if busca un empleado por nombre
     // Lambda sirve para definir funciones anónimas localmente, útiles en algoritmos y operaciones funcionales
-    // Las lambdas se usan donde se necesitan funciones, como en algoritmos de la STL como find_if.
+    // Las lambdas se usan donde se necesitan funciones, como en algoritmos de la STL como find_if
     // Método para buscar un empleado por nombre
     T* buscarEmpleado(const string& nombre) const {
         //uso de algoritmo de busqueda find_if
