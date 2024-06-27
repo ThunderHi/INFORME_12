@@ -172,6 +172,9 @@ public:
         if (it != empleados.end()) {
             return *it;
         }
+        // return *it; devuelve el puntero al empleado encontrado por nombre
+        // Ya sea gerente, diseñador o desarrollador
+
         return nullptr;
         // Nullptr indica que un puntero no apunta a ninguna dirección de memoria válida
         // Si no encuentra, devuelve nullptr
