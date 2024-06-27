@@ -3,6 +3,7 @@
 #include <string> //manejo de cadenas de texto
 #include <vector> //para usar contenedores dinamicos
 #include <algorithm> //para usar algoritmos de la STL
+
 using namespace std;
 
 // Interfaz para mostrar información de empleados
