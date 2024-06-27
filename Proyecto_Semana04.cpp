@@ -1,8 +1,8 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <algorithm> // Para usar algoritmos de la STL
+#include <iostream> //para usar entrada/salida estandar
+#include <fstream> //"filestream" para manejar archivos en c++
+#include <string> //manejo de cadenas de texto
+#include <vector> //para usar contenedores dinamicos
+#include <algorithm> //para usar algoritmos de la STL
 using namespace std;
 
 // Interfaz para mostrar información de empleados
