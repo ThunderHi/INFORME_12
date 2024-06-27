@@ -150,6 +150,8 @@ public:
     // Método para agregar un empleado
     void agregarEmpleado(T* empleado) {
         empleados.push_back(empleado);
+    // push_back añade un puntero de empleado al final del vector empleados del departamento
+    // Cada llamada a agregarEmpleado añade un puntero al objeto específico al vector empleados del departamento correspondiente
     }
 
     // Método para eliminar un empleado por índice
