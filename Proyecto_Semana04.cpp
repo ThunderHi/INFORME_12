@@ -190,6 +190,7 @@ public:
     // Método para listar todos los empleados
     void listarEmpleados() const {
         for (size_t i = 0; i < empleados.size(); ++i) {
+// size_t asegura que i sea del tipo correcto para almacenar el tamaño máximo posible de empleados y manejar adecuadamente todos los índices del vector
             cout << "Indice: " << i + 1 << endl;
             empleados[i]->mostrarInformacion();
             cout << "Salario Calculado: " << empleados[i]->calcularSalario() << endl << endl;
